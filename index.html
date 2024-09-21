@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        dialog#loadingDialog {
+              dialog#loadingDialog {
         font-family: Tahoma, Arial, sans-serif;
            font-size: 18px;
             text-align: center;
@@ -49,7 +49,12 @@
             position: fixed;
     z-index: 1000;
         }
-
+.closebtn:focus {
+    outline: none; /* מבטל את ה-outline ברירת המחדל */
+    background-color: rgba(0, 0, 0, 0.1); /* צבע רקע לפוקוס */
+    box-shadow: 0 0 0 2px black; /* מסגרת סביב ה-span */
+    border-radius: 2px; /* אם אתה רוצה לעגל את הפינות */
+}
 
 
         /* סגנון כפתורים בתוך הדיאלוג */
@@ -101,10 +106,12 @@
         }
 
         /* פוקוס על כפתורי קטגוריות */
-        #categoriesList button:focus {
-            border-color: #2196F3;
-            outline: none;
-        }
+    #categoriesList button:focus {
+     border-color: black;
+    outline: none;
+    box-shadow: 0 0 20px black; /* אפקט זוהר מסביב לכפתור */
+}
+
        body {
            margin: 0;
            font-family: Tahoma, Arial, sans-serif;
@@ -226,8 +233,9 @@ dialog#myDialog {
     z-index: 1000; /* מוודא שהדיאלוג נמצא מעל כל תוכן אחר */
 }
        .search-input:focus {
-           border-color: #2196F3; /* צבע הגבול בעת פוקוס */
-           box-shadow: 0 0 5px rgba(33, 150, 243, 0.5); /* הצללה כחולה בעת פוקוס */
+            border-color: black;
+    outline: none;
+    box-shadow: 0 0 20px black;
        }
 dialog#myDialog button {
     width: 100%;
@@ -235,16 +243,24 @@ dialog#myDialog button {
     margin: 5px 0;
     background-color: #4CAF50;
     color: white;
-    border: none;
+    border: none; /* אין גבול כברירת מחדל */
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    transition: box-shadow 0.2s; /* אנימציה חלקה לצל */
 }
+
 dialog#myDialog button:focus {
-    outline: 1px solid #2196F3;
-    border-color: #2196F3; /* צבע הגבול בעת פוקוס */
-    box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+    outline: none;
+    box-shadow: 0 0 0 3px black; /* צל ברור סביב הכפתור */
 }
+dialog#infoDialog button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px black; /* צל ברור סביב הכפתור */
+}
+
+
+
 
 
 
@@ -267,12 +283,13 @@ dialog#myDialog button:focus {
        }
 
        .menu-button:focus, .titles-button:focus {
-           border-color: #2196F3;
-           box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+            border-color: black;
+    outline: none;
+    box-shadow: 0 0 20px black;
        }
  .button:focus {
-           border-color: #2196F3;
-           box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+           border-color: black;
+           box-shadow: 0 0 20px black;
        }
        /* Custom dialog style */
        dialog {
@@ -298,7 +315,6 @@ dialog#myDialog button:focus {
        dialog button:hover {
            background-color: #45a049;
        }
-
     </style>
 </head>
 <body>
